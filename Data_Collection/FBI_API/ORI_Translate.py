@@ -5,12 +5,12 @@ Created on Wed Aug 28 21:26:10 2019
 @author: Phiremouse
 """
 
-def newkey(x):
-    df=pd.DataFrame(x)
-    df = df.reset_index()
-    df['MyID']=df.index
-    df=df.set_index('MyID', inplace= True)
-    return df
+# def newkey(x):
+#     df=pd.DataFrame(x)
+#     df = df.reset_index()
+#     df['MyID']=df.index
+#     df=df.set_index('MyID', inplace= True)
+#     return df
 
 import pandas as pd
 def ORI_Transform(S_File,O_File, Output):

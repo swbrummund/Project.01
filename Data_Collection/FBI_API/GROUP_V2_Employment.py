@@ -50,14 +50,12 @@ def Agg_Employment( inputfile, year):
             df.drop(labels=index, inplace=True)
         row_count+=1
         time.sleep(1) #60 seconds / limit request of 60
-        # if row_count==60:
-        #     load_count+=1
-        #     time.sleep(5) # random number
+       
     
     E_Join = df.merge(ded, left_on = 'ORI9', right_on = 'ori')
     E_agg = E_Join.groupby(['STATENAME','COUNTYNAME','ADDRESS_CITY']).aggregate({'total_pe_ct':'sum'})
-    E_agg.to_csv('E_Agg.csv')
-    E_Join.to_csv('E_Breakdown.csv')
+    E_agg.to_csv('output/E_Agg.csv')
+    E_Join.to_csv('output/E_Breakdown.csv')
 
     E_Join=''
     E_agg=''
