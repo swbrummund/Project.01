@@ -49,15 +49,12 @@ def SumCrime( inputfile, year):
         
         time.sleep(1) #60 seconds / limit request of 60
         row_count+=1
-        # if row_count==60:
-        #     load_count+=1
-        #     row_count=0
-        #     time.sleep(3) # random number
+      
 
     CR_Join = df.merge(ded, left_on = 'ORI9', right_on = 'ori')
     CR_agg = CR_Join.groupby(['STATENAME','COUNTYNAME','ADDRESS_CITY']).aggregate({'actual':'sum','cleared':'sum'})
-    CR_agg.to_csv('CR_Agg.csv')
-    CR_Join.to_csv('cr_breakdown.csv')
+    CR_agg.to_csv('output/CR_Agg.csv')
+    CR_Join.to_csv('output/cr_breakdown.csv')
     CR_Join=''
     CR_agg=''
     cityfile=''
