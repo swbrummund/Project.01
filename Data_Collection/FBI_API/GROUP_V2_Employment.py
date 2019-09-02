@@ -7,7 +7,7 @@ Updating the Employment API Code
 import requests
 import pandas as pd
 import time
-
+from pathlib2 import Path
 def Agg_Employment( inputfile, year):
 
     row_count=0
@@ -54,8 +54,12 @@ def Agg_Employment( inputfile, year):
     
     E_Join = df.merge(ded, left_on = 'ORI9', right_on = 'ori')
     E_agg = E_Join.groupby(['STATENAME','COUNTYNAME','ADDRESS_CITY']).aggregate({'total_pe_ct':'sum'})
-    E_agg.to_csv('output/E_Agg.csv')
-    E_Join.to_csv('output/E_Breakdown.csv')
+    Base_Dir=Path(__file__).resolve().parent
+    Output1=Base_Dir.joinpath('output\E_Agg.csv')
+    Output2=Base_Dir.joinpath('output\E_Breakdown.csv')
+
+    E_agg.to_csv(Output1)
+    E_Join.to_csv(Output2)
 
     E_Join=''
     E_agg=''

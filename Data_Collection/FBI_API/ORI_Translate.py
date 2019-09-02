@@ -13,8 +13,9 @@ Created on Wed Aug 28 21:26:10 2019
 #     return df
 
 import pandas as pd
+import os
 def ORI_Transform(S_File,O_File, Output):
-
+    x= os.getcwd()
     DFs=pd.read_csv(S_File)
     DFo=pd.read_csv(O_File)
 
