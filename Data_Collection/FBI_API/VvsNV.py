@@ -37,4 +37,6 @@ def CleanStepFinal():
     Merge1 = pd.concat([Cleared, Crime],join='inner', axis=1, sort=False)
     
     Result=pd.concat([df,Merge1],axis=1,join='inner', sort=False)
-    Result.to_csv('output/FullCrimeStatsFinal.csv')
+    outputfile = Base_Dir.joinpath('output/FullCrimeStatsFinal.csv')
+
+    Result.to_csv(outputfile)
