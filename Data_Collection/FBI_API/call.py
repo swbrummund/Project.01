@@ -28,14 +28,15 @@ FBISampleFile=Base_Dir.joinpath('output\FBI_Sample_List.csv')
 #Agg_Employment(FBISampleFile,2016)
 
 # CLEAN UP CRIME RATE AND EMPLOYMNENT FILES
-CrimeFile = os.path.join('.','output','cr_breakdown.csv')
-EmploymentFile = os.path.join('.','output','E_Breakdown.csv')
-clean_cr_e(CrimeFile,EmploymentFile,'County')
+# CrimeFile = os.path.join('.','output','cr_breakdown.csv')
+# EmploymentFile = os.path.join('.','output','E_Breakdown.csv')
+# clean_cr_e(CrimeFile,EmploymentFile,'County')
 
 
 
 # 'Bring it back to the central dataframe from census api'
 #fbi table
-C_File =os.path.join('Output','FullCrimeStats.csv')
-c2c(sampleFile,C_File)
 CleanStepFinal()
+
+C_File =Base_Dir.joinpath('output\FullCrimeStatsFinal.csv')
+c2c(sampleFile,C_File)
