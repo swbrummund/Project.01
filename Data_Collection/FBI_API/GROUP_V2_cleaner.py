@@ -9,6 +9,7 @@ Created on Tue Aug 27 23:44:59 2019
 import pandas as pd
 import numpy as np
 
+
 def clean_cr_e(cr_file,e_file,level):
     cr_df = pd.read_csv(cr_file)
     e_df = pd.read_csv(e_file)
@@ -47,6 +48,8 @@ def clean_cr_e(cr_file,e_file,level):
         table2['Total Workforce']=table2['Total Male Workforce']+table2['Total Female Workforce']
         table2['Total Officers']=table2['Female Officers']+table2['Male Officers']
         table2.to_csv('output/FullCrimeStats.csv')
+
+        
 
 
     elif level=='city':

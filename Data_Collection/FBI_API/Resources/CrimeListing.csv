@@ -1,0 +1,13 @@
+﻿Crime,Type
+arson,Non-Violent
+burglary,Non-Violent
+larceny,Non-Violent
+motor-vehicle-theft,Non-Violent
+property-crime,Non-Violent
+aggravated-assault,Violent
+homicide,Violent
+human-trafficing,Violent
+rape,Violent
+rape-legacy,Violent
+robbery,Violent
+violent-crime,Violent
